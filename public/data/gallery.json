@@ -1,20 +1,4 @@
 {
-  "updatedAt": "2026-08-13T07:14:05.560Z",
-  "days": [
-    {
-      "date": "2026-08-13",
-      "topic": "초록",
-      "photos": [
-        {
-          "id": "2026-08-13-msr6mu7o-0-0f228b",
-          "src": "photos/2026-08-13/2026-08-13-msr6mu7o-0-0f228b.webp",
-          "author": "오늘뭐찍지",
-          "caption": "",
-          "uploadedAt": "2026-08-13T07:14:05.557Z",
-          "width": 1176,
-          "height": 1176
-        }
-      ]
-    }
-  ]
+  "updatedAt": "2026-08-13T07:18:00.000Z",
+  "days": []
 }
