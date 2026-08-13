@@ -172,12 +172,8 @@ function Lightbox({
         </>
       )}
       <figure className="lightbox-figure">
-        <img src={resolvePhotoSource(photo.src)} alt={photo.caption || `${topic} 사진 ${index + 1}`} />
+        <img src={resolvePhotoSource(photo.src)} alt={`${topic} 사진 ${index + 1}`} />
         <figcaption>
-          <div>
-            <strong>{photo.author}</strong>
-            {photo.caption && <p>{photo.caption}</p>}
-          </div>
           <span>{index + 1} / {photos.length}</span>
         </figcaption>
       </figure>
@@ -197,17 +193,14 @@ function PhotoGallery({ day }: { day: GalleryDay }) {
             type="button"
             key={photo.id}
             onClick={() => setLightboxIndex(index)}
-            aria-label={`${photo.author}님의 사진 크게 보기`}
+            aria-label={`${day.topic} 사진 ${index + 1} 크게 보기`}
           >
             <img
               src={resolvePhotoSource(photo.src)}
-              alt={photo.caption || `${day.topic} 사진`}
+              alt={`${day.topic} 사진 ${index + 1}`}
               loading={index < 4 ? "eager" : "lazy"}
               style={photo.width && photo.height ? { aspectRatio: `${photo.width} / ${photo.height}` } : undefined}
             />
-            <span className="photo-gradient" aria-hidden="true" />
-            <span className="photo-author">{photo.author}</span>
-            {photo.caption && <span className="photo-caption">{photo.caption}</span>}
           </button>
         ))}
       </div>
@@ -240,9 +233,9 @@ function ArchiveView({
   return (
     <div className="site-frame">
       <header className="site-header">
-        <a className="brand" href={BASE_URL} aria-label="찰칵 아카이브 첫 화면">
+        <a className="brand" href={BASE_URL} aria-label="찰캌 아카이브 첫 화면">
           <span className="brand-mark" aria-hidden="true"><span /></span>
-          <span>찰칵 아카이브</span>
+          <span>찰캌 아카이브</span>
         </a>
         <button className="admin-entry" type="button" onClick={onOpenAdmin}>
           <span aria-hidden="true">⌁</span>
@@ -326,7 +319,7 @@ function ArchiveView({
 
       <footer className="site-footer">
         <p>그날의 사진을, 언제든 다시.</p>
-        <span>찰칵 아카이브</span>
+        <span>찰캌 아카이브</span>
       </footer>
     </div>
   );
@@ -336,36 +329,22 @@ function DraftCard({
   draft,
   index,
   total,
-  onCaptionChange,
   onMove,
   onRemove,
 }: {
   draft: UploadDraft;
   index: number;
   total: number;
-  onCaptionChange: (value: string) => void;
   onMove: (direction: -1 | 1) => void;
   onRemove: () => void;
 }) {
   return (
     <article className="draft-card">
       <img src={draft.previewUrl} alt={`${index + 1}번째 업로드 미리보기`} />
-      <div className="draft-fields">
-        <label>
-          <span>짧은 설명 <small>선택</small></span>
-          <input
-            type="text"
-            value={draft.caption}
-            onChange={(event) => onCaptionChange(event.target.value)}
-            maxLength={60}
-            placeholder="예: 노을이 예뻤던 순간"
-          />
-        </label>
-        <div className="draft-actions">
-          <button type="button" onClick={() => onMove(-1)} disabled={index === 0} aria-label="사진 순서를 앞으로">↑</button>
-          <button type="button" onClick={() => onMove(1)} disabled={index === total - 1} aria-label="사진 순서를 뒤로">↓</button>
-          <button type="button" className="remove-button" onClick={onRemove}>삭제</button>
-        </div>
+      <div className="draft-actions">
+        <button type="button" onClick={() => onMove(-1)} disabled={index === 0} aria-label="사진 순서를 앞으로">↑</button>
+        <button type="button" onClick={() => onMove(1)} disabled={index === total - 1} aria-label="사진 순서를 뒤로">↓</button>
+        <button type="button" className="remove-button" onClick={onRemove}>삭제</button>
       </div>
     </article>
   );
@@ -385,7 +364,6 @@ function AdminView({
   const initialDay = data.days.find((day) => day.date === initialDate);
   const [date, setDate] = useState(initialDate || todayString());
   const [topic, setTopic] = useState(initialDay?.topic || "");
-  const [author, setAuthor] = useState("");
   const [drafts, setDrafts] = useState<UploadDraft[]>([]);
   const [token, setToken] = useState("");
   const [dragging, setDragging] = useState(false);
@@ -426,7 +404,6 @@ function AdminView({
         id: crypto.randomUUID(),
         file,
         previewUrl: URL.createObjectURL(file),
-        caption: "",
       })),
     ]);
   }
@@ -449,16 +426,12 @@ function AdminView({
     });
   }
 
-  function changeCaption(id: string, value: string) {
-    setDrafts((current) => current.map((item) => (item.id === id ? { ...item, caption: value } : item)));
-  }
-
   async function publish(event: FormEvent) {
     event.preventDefault();
     setError("");
     setCommitUrl("");
-    if (!date || !topic.trim() || !author.trim() || !drafts.length || !token.trim()) {
-      setError("날짜, 주제, 올린 사람, 사진, GitHub 연결 토큰을 모두 확인해 주세요.");
+    if (!date || !topic.trim() || !drafts.length || !token.trim()) {
+      setError("날짜, 주제, 사진, GitHub 연결 토큰을 모두 확인해 주세요.");
       return;
     }
     setPublishing(true);
@@ -467,7 +440,6 @@ function AdminView({
         token: token.trim(),
         date,
         topic: topic.trim(),
-        author: author.trim(),
         drafts,
         onProgress: setStatus,
       });
@@ -499,7 +471,7 @@ function AdminView({
     <div className="admin-page">
       <header className="admin-header">
         <div>
-          <p className="eyebrow">CHALKAK ADMIN</p>
+          <p className="eyebrow">찰캌 아카이브 ADMIN</p>
           <h1>새로운 하루를 기록해요</h1>
         </div>
         <button className="secondary-button" type="button" onClick={onBack}>아카이브로 돌아가기</button>
@@ -536,18 +508,6 @@ function AdminView({
               </label>
             </div>
             {existingDay && <p className="existing-day">이 날짜에는 이미 “{existingDay.topic}” 사진 {existingDay.photos.length}장이 있어요. 새 사진은 이어서 추가됩니다.</p>}
-            <label className="single-field">
-              <span>올린 사람</span>
-              <input
-                type="text"
-                value={author}
-                onChange={(event) => setAuthor(event.target.value)}
-                maxLength={20}
-                placeholder="카카오톡 닉네임"
-                required
-              />
-            </label>
-
             <div className="panel-divider" />
 
             <div className="panel-heading compact-heading">
@@ -585,7 +545,7 @@ function AdminView({
           <section className="admin-panel preview-panel">
             <div className="panel-heading preview-heading">
               <span>03</span>
-              <div><h2>사진 미리보기</h2><p>설명을 더하고 표시 순서를 확인해 주세요.</p></div>
+              <div><h2>사진 미리보기</h2><p>표시 순서만 확인해 주세요.</p></div>
               <strong className="draft-count">{drafts.length}장</strong>
             </div>
             {drafts.length ? (
@@ -596,7 +556,6 @@ function AdminView({
                     draft={draft}
                     index={index}
                     total={drafts.length}
-                    onCaptionChange={(value) => changeCaption(draft.id, value)}
                     onMove={(direction) => moveDraft(index, direction)}
                     onRemove={() => removeDraft(draft.id)}
                   />
@@ -666,27 +625,20 @@ function App() {
       })
       .then((galleryData) => {
         setData(galleryData);
-        setSelectedDate((current) => {
-          const nextDate = isValidIsoDate(current)
-            ? current
-            : galleryData.days.map((day) => day.date).sort().at(-1) || todayString();
-          updateQuery({ date: nextDate }, true);
-          return nextDate;
-        });
+        setSelectedDate((current) => (isValidIsoDate(current) ? current : todayString()));
       })
       .catch((error) => setLoadingError(error instanceof Error ? error.message : "갤러리를 불러오지 못했습니다."));
   }, []);
 
   useEffect(() => {
     if (!data) return;
-    const loadedData = data;
     function onPopState() {
       const params = new URLSearchParams(window.location.search);
       const queryDate = params.get("date");
       setSelectedDate(
         isValidIsoDate(queryDate)
           ? queryDate
-          : loadedData.days.map((day) => day.date).sort().at(-1) || todayString(),
+          : todayString(),
       );
       if (!params.has("admin")) setAdminOpen(false);
     }
@@ -730,7 +682,7 @@ function App() {
     );
   }
 
-  const activeDate = selectedDate || data.days.map((day) => day.date).sort().at(-1) || todayString();
+  const activeDate = selectedDate || todayString();
 
   return (
     <>

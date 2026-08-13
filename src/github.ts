@@ -135,14 +135,12 @@ export async function publishGalleryDay({
   token,
   date,
   topic,
-  author,
   drafts,
   onProgress,
 }: {
   token: string;
   date: string;
   topic: string;
-  author: string;
   drafts: UploadDraft[];
   onProgress?: (message: string) => void;
 }) {
@@ -172,8 +170,6 @@ export async function publishGalleryDay({
     photos.push({
       id,
       src: `photos/${date}/${id}.webp`,
-      author,
-      caption: draft.caption.trim(),
       uploadedAt: new Date().toISOString(),
       width: optimized.width,
       height: optimized.height,
