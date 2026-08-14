@@ -51,6 +51,17 @@ function formatAnalyticsDate(date: string) {
   );
 }
 
+function formatAnalyticsChartDate(date: string) {
+  const [, month, day] = date.split("-").map(Number);
+  return `${month}.${day}`;
+}
+
+function formatAnalyticsWeekday(date: string) {
+  return new Intl.DateTimeFormat("ko-KR", { weekday: "short" })
+    .format(new Date(`${date}T12:00:00`))
+    .replace("요일", "");
+}
+
 function formatAnalyticsUpdate(value: string) {
   return new Intl.DateTimeFormat("ko-KR", {
     timeZone: "Asia/Seoul",
@@ -392,70 +403,127 @@ function DraftCard({
 function AnalyticsPanel() {
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
   const [analyticsError, setAnalyticsError] = useState("");
+  const [chartMetric, setChartMetric] = useState<"visitors" | "views">("visitors");
 
   useEffect(() => {
-    fetch(`${BASE_URL}data/analytics.json`, { cache: "no-store" })
-      .then((response) => {
+    let active = true;
+
+    async function loadAnalytics() {
+      try {
+        const response = await fetch(`${BASE_URL}data/analytics.json?t=${Date.now()}`, { cache: "no-store" });
         if (!response.ok) throw new Error("방문 통계를 불러오지 못했습니다.");
-        return response.json() as Promise<AnalyticsData>;
-      })
-      .then(setAnalytics)
-      .catch(() => setAnalyticsError("방문 통계를 잠시 불러오지 못했어요."));
+        const data = await response.json() as AnalyticsData;
+        if (!active) return;
+        setAnalytics(data);
+        setAnalyticsError("");
+      } catch {
+        if (active) setAnalyticsError("방문 통계를 잠시 불러오지 못했어요.");
+      }
+    }
+
+    void loadAnalytics();
+    const refreshTimer = window.setInterval(loadAnalytics, 60_000);
+    return () => {
+      active = false;
+      window.clearInterval(refreshTimer);
+    };
   }, []);
 
   const today = analyticsTodayString();
   const todayStats = analytics?.days.find((day) => day.date === today) || { visitors: 0, views: 0 };
-  const recentDays = analytics?.days.slice().reverse() || [];
+  const chartDays = (analytics?.days || [])
+    .slice()
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .slice(-7);
+  const chartMax = Math.max(1, ...chartDays.map((day) => day[chartMetric]));
+  const chartTotal = chartDays.reduce((total, day) => total + day[chartMetric], 0);
+  const chartLabel = chartMetric === "visitors" ? "방문자" : "조회수";
+  const chartUnit = chartMetric === "visitors" ? "명" : "회";
 
   return (
     <section className="analytics-panel" aria-labelledby="analytics-title">
       <div className="analytics-heading">
         <div>
-          <p className="eyebrow">VISITOR REPORT</p>
-          <h2 id="analytics-title">방문 현황</h2>
-          <p>이름이나 사진 내용 없이 날짜별 방문 횟수만 집계해요.</p>
+          <p className="eyebrow">INSIGHTS</p>
+          <h2 id="analytics-title">방문 인사이트</h2>
+          <p>오늘의 숫자와 최근 7일 흐름을 한눈에 확인해요.</p>
         </div>
-        <span>{analytics?.updatedAt ? `${formatAnalyticsUpdate(analytics.updatedAt)} 기준` : "약 1시간마다 갱신"}</span>
+        <span>{analytics?.updatedAt ? `${formatAnalyticsUpdate(analytics.updatedAt)} 기준 · 약 10분마다 갱신` : "약 10분마다 갱신"}</span>
       </div>
 
-      {analyticsError ? (
-        <p className="analytics-message" role="status">{analyticsError} 사진 관리는 정상적으로 사용할 수 있습니다.</p>
-      ) : !analytics ? (
-        <p className="analytics-message" role="status">방문 기록을 불러오는 중…</p>
+      {!analytics ? (
+        <p className="analytics-message" role="status">
+          {analyticsError ? `${analyticsError} 사진 관리는 정상적으로 사용할 수 있습니다.` : "방문 기록을 불러오는 중…"}
+        </p>
       ) : !analytics.configured ? (
         <p className="analytics-message">방문 기록을 모으기 시작했어요. 집계 연결을 마치면 날짜별 숫자가 여기에 표시됩니다.</p>
       ) : (
         <>
+          {analyticsError && <p className="analytics-refresh-note" role="status">최신 기록을 확인하지 못해 마지막으로 저장된 숫자를 보여 주고 있어요.</p>}
           <div className="analytics-cards">
             <article>
-              <span>오늘 방문자</span>
+              <span className="analytics-card-label">오늘 방문자</span>
               <strong>{todayStats.visitors.toLocaleString("ko-KR")}<small>명</small></strong>
-              <p>같은 브라우저는 하루 한 번</p>
+              <p>같은 브라우저는 오늘 한 명으로 계산</p>
             </article>
             <article>
-              <span>오늘 조회수</span>
+              <span className="analytics-card-label">오늘 조회수</span>
               <strong>{todayStats.views.toLocaleString("ko-KR")}<small>회</small></strong>
-              <p>사이트를 새로 연 전체 횟수</p>
+              <p>오늘 사이트가 열린 전체 횟수</p>
             </article>
           </div>
 
-          <div className="analytics-table-wrap">
-            <table className="analytics-table">
-              <caption>최근 30일 방문 통계</caption>
-              <thead>
-                <tr><th scope="col">날짜</th><th scope="col">방문자</th><th scope="col">조회수</th></tr>
-              </thead>
-              <tbody>
-                {recentDays.map((day) => (
-                  <tr key={day.date}>
-                    <th scope="row">{formatAnalyticsDate(day.date)}{day.date === today && <em>오늘</em>}</th>
-                    <td>{day.visitors.toLocaleString("ko-KR")}명</td>
-                    <td>{day.views.toLocaleString("ko-KR")}회</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <figure className={`analytics-chart-card is-${chartMetric}`}>
+            <figcaption className="analytics-chart-heading">
+              <div>
+                <span>최근 7일</span>
+                <strong>{chartLabel} 흐름</strong>
+              </div>
+              <div className="analytics-metric-switch" role="group" aria-label="그래프 항목 선택">
+                <button
+                  type="button"
+                  aria-pressed={chartMetric === "visitors"}
+                  className={chartMetric === "visitors" ? "is-active" : ""}
+                  onClick={() => setChartMetric("visitors")}
+                >
+                  방문자
+                </button>
+                <button
+                  type="button"
+                  aria-pressed={chartMetric === "views"}
+                  className={chartMetric === "views" ? "is-active" : ""}
+                  onClick={() => setChartMetric("views")}
+                >
+                  조회수
+                </button>
+              </div>
+            </figcaption>
+
+            <div className="analytics-chart-total">
+              <span>{chartMetric === "visitors" ? "일별 방문자 합계" : "7일 조회수 합계"}</span>
+              <strong>{chartTotal.toLocaleString("ko-KR")}<small>{chartUnit}</small></strong>
+            </div>
+
+            <ol className="analytics-bars" aria-label={`최근 7일 ${chartLabel} 그래프`}>
+              {chartDays.map((day) => {
+                const value = day[chartMetric];
+                const height = value === 0 ? 0 : Math.max(8, Math.round((value / chartMax) * 100));
+                return (
+                  <li key={day.date} aria-label={`${formatAnalyticsDate(day.date)} ${chartLabel} ${value}${chartUnit}`}>
+                    <span className="analytics-bar-value">{value.toLocaleString("ko-KR")}</span>
+                    <span className="analytics-bar-track" aria-hidden="true">
+                      <span className="analytics-bar-fill" style={{ height: `${height}%` }} />
+                    </span>
+                    <time dateTime={day.date}>
+                      <span>{formatAnalyticsChartDate(day.date)}</span>
+                      <small>{formatAnalyticsWeekday(day.date)}</small>
+                    </time>
+                  </li>
+                );
+              })}
+            </ol>
+            <p className="analytics-chart-note">방문자 수는 브라우저 기준이라 실제 사람 수와 조금 다를 수 있어요.</p>
+          </figure>
         </>
       )}
     </section>
