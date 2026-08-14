@@ -39,15 +39,15 @@ if (!personalKey) {
 try {
   const query = `
     SELECT
-      toString(toDate(timestamp, '${timezone}')) AS date,
+      formatDateTime(toTimeZone(timestamp, '${timezone}'), '%Y-%m-%d') AS date,
       uniqExact(distinct_id) AS visitors,
       count() AS views
     FROM events
     WHERE event = '$pageview'
-      AND properties.chalkak_archive = true
       AND timestamp >= now() - INTERVAL 31 DAY
     GROUP BY date
     ORDER BY date ASC
+    LIMIT 31
   `;
 
   const response = await fetch(`${apiHost}/api/projects/${encodeURIComponent(projectId)}/query/`, {
@@ -63,7 +63,15 @@ try {
     }),
   });
 
-  if (!response.ok) throw new Error(`PostHog 통계 조회 실패 (${response.status})`);
+  if (!response.ok) {
+    const errorPayload = await response.json().catch(() => null);
+    const detail = [errorPayload?.detail, errorPayload?.error, errorPayload?.message]
+      .find((value) => typeof value === "string")
+      ?.replace(/ph[a-z]_[A-Za-z0-9_-]+/g, "[redacted]")
+      .replace(/\s+/g, " ")
+      .slice(0, 300);
+    throw new Error(`PostHog 통계 조회 실패 (${response.status})${detail ? ` - ${detail}` : ""}`);
+  }
 
   const payload = await response.json();
   if (!Array.isArray(payload.results)) throw new Error("PostHog 통계 응답 형식이 예상과 다릅니다.");
