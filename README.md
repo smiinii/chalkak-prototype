@@ -10,6 +10,7 @@
 - 관리자 비밀번호 화면
 - 사진 여러 장 선택, 미리보기, 순서 변경
 - GitHub 저장소에 이미지와 `gallery.json`을 한 커밋으로 게시
+- 관리자 화면에서 날짜별 익명 방문자와 조회수 확인
 - GitHub Actions 기반 Pages 자동 배포
 
 ## 로컬 실행
@@ -41,6 +42,17 @@ GitHub Pages는 정적 호스팅이므로 화면 진입 비밀번호만으로 �
 ## 데이터
 
 공개 데이터는 [`public/data/gallery.json`](public/data/gallery.json)에 저장됩니다. 관리자가 올린 이미지는 `public/photos/YYYY-MM-DD/` 아래에 들어갑니다.
+
+## 방문 통계 설정
+
+방문 기록은 PostHog에 익명 페이지뷰만 전송합니다. 공개 수집 키는 사이트 코드에 포함해도 되지만, 통계를 읽는 개인 API 키는 반드시 GitHub Actions secret으로 보관해야 합니다.
+
+1. PostHog **Settings → Project → Privacy → IP data capture**를 **Disabled**로 설정합니다.
+2. PostHog의 숫자형 Project ID를 저장소 변수 `POSTHOG_PROJECT_ID`로 추가합니다.
+3. PostHog Personal API key를 `Query: Read` 권한만 주어 만든 뒤 저장소 secret `POSTHOG_PERSONAL_API_KEY`로 추가합니다.
+4. GitHub Actions의 `Deploy to GitHub Pages`를 한 번 실행합니다.
+
+통계는 약 한 시간마다 갱신되며 서울 시간 기준 최근 30일을 집계합니다. 비밀키가 없거나 PostHog 조회가 일시적으로 실패해도 사진 아카이브 배포는 계속됩니다.
 
 ## GitHub Pages
 

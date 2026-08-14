@@ -1,7 +1,8 @@
 import { FormEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
+import { trackArchiveVisit } from "./analytics";
 import { publishGalleryDay } from "./github";
-import type { GalleryData, GalleryDay, GalleryPhoto, UploadDraft } from "./types";
+import type { AnalyticsData, GalleryData, GalleryDay, GalleryPhoto, UploadDraft } from "./types";
 import "./styles.css";
 
 const ADMIN_ACCESS_HASH = "2b9c5a66f37495d04bc54fc66291c6940d3cf73d1f653b824532fecafdc5b332";
@@ -42,6 +43,31 @@ function formatShortDate(date: string) {
   return new Intl.DateTimeFormat("ko-KR", { month: "long", day: "numeric" }).format(
     new Date(`${date}T12:00:00`),
   );
+}
+
+function formatAnalyticsDate(date: string) {
+  return new Intl.DateTimeFormat("ko-KR", { month: "long", day: "numeric", weekday: "short" }).format(
+    new Date(`${date}T12:00:00`),
+  );
+}
+
+function formatAnalyticsUpdate(value: string) {
+  return new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(new Date(value));
+}
+
+function analyticsTodayString() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
 }
 
 function resolvePhotoSource(src: string) {
@@ -363,6 +389,79 @@ function DraftCard({
   );
 }
 
+function AnalyticsPanel() {
+  const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
+  const [analyticsError, setAnalyticsError] = useState("");
+
+  useEffect(() => {
+    fetch(`${BASE_URL}data/analytics.json`, { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) throw new Error("방문 통계를 불러오지 못했습니다.");
+        return response.json() as Promise<AnalyticsData>;
+      })
+      .then(setAnalytics)
+      .catch(() => setAnalyticsError("방문 통계를 잠시 불러오지 못했어요."));
+  }, []);
+
+  const today = analyticsTodayString();
+  const todayStats = analytics?.days.find((day) => day.date === today) || { visitors: 0, views: 0 };
+  const recentDays = analytics?.days.slice().reverse() || [];
+
+  return (
+    <section className="analytics-panel" aria-labelledby="analytics-title">
+      <div className="analytics-heading">
+        <div>
+          <p className="eyebrow">VISITOR REPORT</p>
+          <h2 id="analytics-title">방문 현황</h2>
+          <p>이름 없이 기기·브라우저 기준으로 익명 집계해요.</p>
+        </div>
+        <span>{analytics?.updatedAt ? `${formatAnalyticsUpdate(analytics.updatedAt)} 기준` : "약 1시간마다 갱신"}</span>
+      </div>
+
+      {analyticsError ? (
+        <p className="analytics-message" role="status">{analyticsError} 사진 관리는 정상적으로 사용할 수 있습니다.</p>
+      ) : !analytics ? (
+        <p className="analytics-message" role="status">방문 기록을 불러오는 중…</p>
+      ) : !analytics.configured ? (
+        <p className="analytics-message">방문 기록을 모으기 시작했어요. 집계 연결을 마치면 날짜별 숫자가 여기에 표시됩니다.</p>
+      ) : (
+        <>
+          <div className="analytics-cards">
+            <article>
+              <span>오늘 방문자</span>
+              <strong>{todayStats.visitors.toLocaleString("ko-KR")}<small>명</small></strong>
+              <p>같은 브라우저는 하루 한 번</p>
+            </article>
+            <article>
+              <span>오늘 조회수</span>
+              <strong>{todayStats.views.toLocaleString("ko-KR")}<small>회</small></strong>
+              <p>사이트를 새로 연 전체 횟수</p>
+            </article>
+          </div>
+
+          <div className="analytics-table-wrap">
+            <table className="analytics-table">
+              <caption>최근 30일 방문 통계</caption>
+              <thead>
+                <tr><th scope="col">날짜</th><th scope="col">방문자</th><th scope="col">조회수</th></tr>
+              </thead>
+              <tbody>
+                {recentDays.map((day) => (
+                  <tr key={day.date}>
+                    <th scope="row">{formatAnalyticsDate(day.date)}{day.date === today && <em>오늘</em>}</th>
+                    <td>{day.visitors.toLocaleString("ko-KR")}명</td>
+                    <td>{day.views.toLocaleString("ko-KR")}회</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+    </section>
+  );
+}
+
 function AdminView({
   data,
   initialDate,
@@ -499,6 +598,7 @@ function AdminView({
       </header>
 
       <main className="admin-main">
+        <AnalyticsPanel />
         <div className="admin-notice">
           <span aria-hidden="true">i</span>
           <p><strong>안전한 게시 방식</strong> 비밀번호는 관리자 화면을 여는 코드이고, 실제 게시 권한은 이 저장소에만 제한한 GitHub 토큰이 지켜줍니다. 토큰은 어디에도 저장하지 않습니다.</p>
@@ -639,6 +739,7 @@ function App() {
   const [adminOpen, setAdminOpen] = useState(false);
 
   useEffect(() => {
+    trackArchiveVisit();
     fetch(`${BASE_URL}data/gallery.json`, { cache: "no-store" })
       .then((response) => {
         if (!response.ok) throw new Error("갤러리를 불러오지 못했습니다.");

@@ -17,6 +17,19 @@ export type GalleryData = {
   days: GalleryDay[];
 };
 
+export type AnalyticsDay = {
+  date: string;
+  visitors: number;
+  views: number;
+};
+
+export type AnalyticsData = {
+  configured: boolean;
+  updatedAt: string | null;
+  timezone: "Asia/Seoul";
+  days: AnalyticsDay[];
+};
+
 export type UploadDraft = {
   id: string;
   file: File;
