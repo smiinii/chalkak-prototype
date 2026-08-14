@@ -32,7 +32,6 @@ jobs:
       - name: Generate visitor analytics
         env:
           POSTHOG_PERSONAL_API_KEY: ${{ secrets.POSTHOG_PERSONAL_API_KEY }}
-          POSTHOG_PROJECT_ID: ${{ vars.POSTHOG_PROJECT_ID }}
         run: npm run analytics:generate
       - name: Build site
         run: npm run build

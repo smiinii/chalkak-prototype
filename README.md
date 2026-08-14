@@ -45,12 +45,11 @@ GitHub Pages는 정적 호스팅이므로 화면 진입 비밀번호만으로 �
 
 ## 방문 통계 설정
 
-방문 기록은 PostHog에 익명 페이지뷰만 전송합니다. 공개 수집 키는 사이트 코드에 포함해도 되지만, 통계를 읽는 개인 API 키는 반드시 GitHub Actions secret으로 보관해야 합니다.
+방문 기록은 PostHog에 이름이나 사진 내용 없이 페이지뷰만 전송합니다. 공개 수집 키와 Project ID `557484`는 사이트에 연결되어 있습니다. 통계를 읽는 개인 API 키만 반드시 GitHub Actions secret으로 보관해야 합니다.
 
-1. PostHog **Settings → Project → Privacy → IP data capture**를 **Disabled**로 설정합니다.
-2. PostHog의 숫자형 Project ID를 저장소 변수 `POSTHOG_PROJECT_ID`로 추가합니다.
-3. PostHog Personal API key를 `Query: Read` 권한만 주어 만든 뒤 저장소 secret `POSTHOG_PERSONAL_API_KEY`로 추가합니다.
-4. GitHub Actions의 `Deploy to GitHub Pages`를 한 번 실행합니다.
+1. PostHog Personal API key를 `Query: Read` 권한만 주어 만듭니다.
+2. 저장소 secret `POSTHOG_PERSONAL_API_KEY`에 그 키를 추가합니다.
+3. GitHub Actions의 `Deploy to GitHub Pages`를 한 번 실행합니다.
 
 통계는 약 한 시간마다 갱신되며 서울 시간 기준 최근 30일을 집계합니다. 비밀키가 없거나 PostHog 조회가 일시적으로 실패해도 사진 아카이브 배포는 계속됩니다.
 

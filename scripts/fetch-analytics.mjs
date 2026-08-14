@@ -2,7 +2,7 @@ import { writeFile } from "node:fs/promises";
 
 const outputPath = new URL("../public/data/analytics.json", import.meta.url);
 const personalKey = process.env.POSTHOG_PERSONAL_API_KEY?.trim();
-const projectId = process.env.POSTHOG_PROJECT_ID?.trim();
+const projectId = "557484";
 const apiHost = "https://us.posthog.com";
 const timezone = "Asia/Seoul";
 const liveSnapshotUrl = "https://chalkak.pysun.kr/data/analytics.json";
@@ -31,7 +31,7 @@ async function reuseLiveSnapshot() {
   }
 }
 
-if (!personalKey || !projectId) {
+if (!personalKey) {
   if (!(await reuseLiveSnapshot())) console.log("PostHog 조회 설정 전이라 빈 통계 파일을 사용합니다.");
   process.exit(0);
 }

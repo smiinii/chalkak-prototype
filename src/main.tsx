@@ -413,7 +413,7 @@ function AnalyticsPanel() {
         <div>
           <p className="eyebrow">VISITOR REPORT</p>
           <h2 id="analytics-title">방문 현황</h2>
-          <p>이름 없이 기기·브라우저 기준으로 익명 집계해요.</p>
+          <p>이름이나 사진 내용 없이 날짜별 방문 횟수만 집계해요.</p>
         </div>
         <span>{analytics?.updatedAt ? `${formatAnalyticsUpdate(analytics.updatedAt)} 기준` : "약 1시간마다 갱신"}</span>
       </div>
