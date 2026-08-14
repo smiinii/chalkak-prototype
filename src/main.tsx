@@ -222,13 +222,18 @@ function ArchiveView({
   onDateChange: (date: string) => void;
   onOpenAdmin: () => void;
 }) {
-  const dates = useMemo(() => data.days.map((day) => day.date).sort(), [data.days]);
+  const today = todayString();
+  const photoDates = useMemo(() => data.days.map((day) => day.date).sort(), [data.days]);
+  const navigationDates = useMemo(
+    () => Array.from(new Set([...photoDates, today, selectedDate])).sort(),
+    [photoDates, selectedDate, today],
+  );
   const day = data.days.find((item) => item.date === selectedDate);
-  const previousDate = [...dates].reverse().find((date) => date < selectedDate);
-  const nextDate = dates.find((date) => date > selectedDate);
-  const selectedIndex = Math.max(0, dates.indexOf(selectedDate));
-  const dotWindowStart = dates.length <= 13 ? 0 : Math.max(0, Math.min(selectedIndex - 6, dates.length - 13));
-  const visibleDates = dates.slice(dotWindowStart, dotWindowStart + 13);
+  const previousDate = [...navigationDates].reverse().find((date) => date < selectedDate);
+  const nextDate = navigationDates.find((date) => date > selectedDate);
+  const selectedIndex = Math.max(0, photoDates.indexOf(selectedDate));
+  const dotWindowStart = photoDates.length <= 13 ? 0 : Math.max(0, Math.min(selectedIndex - 6, photoDates.length - 13));
+  const visibleDates = photoDates.slice(dotWindowStart, dotWindowStart + 13);
 
   return (
     <div className="site-frame">
@@ -251,7 +256,7 @@ function ArchiveView({
               type="button"
               disabled={!previousDate}
               onClick={() => previousDate && onDateChange(previousDate)}
-              aria-label="사진이 있는 이전 날짜"
+              aria-label="이전 날짜"
             >
               ‹
             </button>
@@ -271,7 +276,7 @@ function ArchiveView({
               type="button"
               disabled={!nextDate}
               onClick={() => nextDate && onDateChange(nextDate)}
-              aria-label="사진이 있는 다음 날짜"
+              aria-label="다음 날짜"
             >
               ›
             </button>
@@ -308,8 +313,8 @@ function ArchiveView({
             <p className="eyebrow">{formatShortDate(selectedDate)}</p>
             <h1>이날은 아직 조용해요</h1>
             <p>등록된 사진이 없습니다. 사진이 있는 날짜로 이동해 보세요.</p>
-            {dates.length > 0 && (
-              <button className="secondary-button" type="button" onClick={() => onDateChange(dates[dates.length - 1])}>
+            {photoDates.length > 0 && (
+              <button className="secondary-button" type="button" onClick={() => onDateChange(photoDates[photoDates.length - 1])}>
                 가장 최근 사진 보기
               </button>
             )}
@@ -647,8 +652,10 @@ function App() {
   }, [data]);
 
   function changeDate(date: string) {
-    setSelectedDate(date);
-    updateQuery({ date });
+    const today = todayString();
+    const nextDate = isValidIsoDate(date) ? date : today;
+    setSelectedDate(nextDate);
+    updateQuery({ date: nextDate === today ? null : nextDate });
   }
 
   function enterAdmin() {
@@ -694,7 +701,7 @@ function App() {
           onPublished={(nextData, date) => {
             setData(nextData);
             setSelectedDate(date);
-            updateQuery({ date }, true);
+            updateQuery({ date: date === todayString() ? null : date }, true);
           }}
         />
       ) : (
