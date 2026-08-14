@@ -18,9 +18,13 @@ function isValidIsoDate(value: string | null): value is string {
   );
 }
 
+function isPastOrToday(value: string | null, today = todayString()): value is string {
+  return isValidIsoDate(value) && value <= today;
+}
+
 function initialDateFromUrl() {
   const value = new URLSearchParams(window.location.search).get("date");
-  return isValidIsoDate(value) ? value : "";
+  return isPastOrToday(value) ? value : "";
 }
 
 function formatDate(date: string) {
@@ -223,7 +227,10 @@ function ArchiveView({
   onOpenAdmin: () => void;
 }) {
   const today = todayString();
-  const photoDates = useMemo(() => data.days.map((day) => day.date).sort(), [data.days]);
+  const photoDates = useMemo(
+    () => data.days.map((day) => day.date).filter((date) => isPastOrToday(date, today)).sort(),
+    [data.days, today],
+  );
   const navigationDates = useMemo(
     () => Array.from(new Set([...photoDates, today, selectedDate])).sort(),
     [photoDates, selectedDate, today],
@@ -267,6 +274,7 @@ function ArchiveView({
                 className="native-date-input"
                 type="date"
                 value={selectedDate}
+                max={today}
                 onChange={(event) => onDateChange(event.target.value)}
                 aria-label="날짜 직접 선택"
               />
@@ -366,8 +374,10 @@ function AdminView({
   onBack: () => void;
   onPublished: (data: GalleryData, date: string) => void;
 }) {
-  const initialDay = data.days.find((day) => day.date === initialDate);
-  const [date, setDate] = useState(initialDate || todayString());
+  const today = todayString();
+  const initialSafeDate = isPastOrToday(initialDate, today) ? initialDate : today;
+  const initialDay = data.days.find((day) => day.date === initialSafeDate);
+  const [date, setDate] = useState(initialSafeDate);
   const [topic, setTopic] = useState(initialDay?.topic || "");
   const [drafts, setDrafts] = useState<UploadDraft[]>([]);
   const [token, setToken] = useState("");
@@ -389,8 +399,10 @@ function AdminView({
   }, [drafts.length, publishing]);
 
   function selectDate(nextDate: string) {
-    setDate(nextDate);
-    const day = data.days.find((item) => item.date === nextDate);
+    const currentToday = todayString();
+    const safeDate = isPastOrToday(nextDate, currentToday) ? nextDate : currentToday;
+    setDate(safeDate);
+    const day = data.days.find((item) => item.date === safeDate);
     setTopic(day?.topic || "");
   }
 
@@ -435,6 +447,10 @@ function AdminView({
     event.preventDefault();
     setError("");
     setCommitUrl("");
+    if (date && !isPastOrToday(date)) {
+      setError("오늘 이후 날짜에는 사진을 게시할 수 없습니다.");
+      return;
+    }
     if (!date || !topic.trim() || !drafts.length || !token.trim()) {
       setError("날짜, 주제, 사진, GitHub 연결 토큰을 모두 확인해 주세요.");
       return;
@@ -497,7 +513,7 @@ function AdminView({
             <div className="field-grid">
               <label>
                 <span>날짜</span>
-                <input type="date" value={date} onChange={(event) => selectDate(event.target.value)} required />
+                <input type="date" value={date} max={today} onChange={(event) => selectDate(event.target.value)} required />
               </label>
               <label>
                 <span>그날의 주제</span>
@@ -629,8 +645,13 @@ function App() {
         return response.json() as Promise<GalleryData>;
       })
       .then((galleryData) => {
+        const today = todayString();
+        const queryDate = new URLSearchParams(window.location.search).get("date");
         setData(galleryData);
-        setSelectedDate((current) => (isValidIsoDate(current) ? current : todayString()));
+        setSelectedDate((current) => (isPastOrToday(current, today) ? current : today));
+        if (queryDate && (!isPastOrToday(queryDate, today) || queryDate === today)) {
+          updateQuery({ date: null }, true);
+        }
       })
       .catch((error) => setLoadingError(error instanceof Error ? error.message : "갤러리를 불러오지 못했습니다."));
   }, []);
@@ -640,11 +661,10 @@ function App() {
     function onPopState() {
       const params = new URLSearchParams(window.location.search);
       const queryDate = params.get("date");
-      setSelectedDate(
-        isValidIsoDate(queryDate)
-          ? queryDate
-          : todayString(),
-      );
+      const today = todayString();
+      const nextDate = isPastOrToday(queryDate, today) ? queryDate : today;
+      setSelectedDate(nextDate);
+      if (queryDate && nextDate === today) updateQuery({ date: null }, true);
       if (!params.has("admin")) setAdminOpen(false);
     }
     window.addEventListener("popstate", onPopState);
@@ -653,7 +673,7 @@ function App() {
 
   function changeDate(date: string) {
     const today = todayString();
-    const nextDate = isValidIsoDate(date) ? date : today;
+    const nextDate = isPastOrToday(date, today) ? date : today;
     setSelectedDate(nextDate);
     updateQuery({ date: nextDate === today ? null : nextDate });
   }
