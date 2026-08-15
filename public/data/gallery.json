@@ -1,6 +1,61 @@
 {
-  "updatedAt": "2026-08-14T08:38:57.993Z",
+  "updatedAt": "2026-08-15T07:38:23.164Z",
   "days": [
+    {
+      "date": "2026-08-15",
+      "topic": "산책",
+      "photos": [
+        {
+          "id": "2026-08-15-msu2dkso-0-db1237",
+          "src": "photos/2026-08-15/2026-08-15-msu2dkso-0-db1237.webp",
+          "uploadedAt": "2026-08-15T07:38:13.512Z",
+          "width": 1050,
+          "height": 1400
+        },
+        {
+          "id": "2026-08-15-msu2dm03-1-64eb1e",
+          "src": "photos/2026-08-15/2026-08-15-msu2dm03-1-64eb1e.webp",
+          "uploadedAt": "2026-08-15T07:38:15.076Z",
+          "width": 1500,
+          "height": 1000
+        },
+        {
+          "id": "2026-08-15-msu2dnut-2-80e7b1",
+          "src": "photos/2026-08-15/2026-08-15-msu2dnut-2-80e7b1.webp",
+          "uploadedAt": "2026-08-15T07:38:17.477Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-15-msu2doss-3-f5a7ec",
+          "src": "photos/2026-08-15/2026-08-15-msu2doss-3-f5a7ec.webp",
+          "uploadedAt": "2026-08-15T07:38:18.700Z",
+          "width": 1170,
+          "height": 1539
+        },
+        {
+          "id": "2026-08-15-msu2dq5u-4-f62bbb",
+          "src": "photos/2026-08-15/2026-08-15-msu2dq5u-4-f62bbb.webp",
+          "uploadedAt": "2026-08-15T07:38:20.466Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-15-msu2dr3m-5-1dfe31",
+          "src": "photos/2026-08-15/2026-08-15-msu2dr3m-5-1dfe31.webp",
+          "uploadedAt": "2026-08-15T07:38:21.682Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-15-msu2ds8s-6-9e1f72",
+          "src": "photos/2026-08-15/2026-08-15-msu2ds8s-6-9e1f72.webp",
+          "uploadedAt": "2026-08-15T07:38:23.164Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-08-14",
       "topic": "하늘",
