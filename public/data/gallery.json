@@ -1,6 +1,33 @@
 {
-  "updatedAt": "2026-08-15T07:38:23.164Z",
+  "updatedAt": "2026-08-16T15:23:57.148Z",
   "days": [
+    {
+      "date": "2026-08-16",
+      "topic": "창문",
+      "photos": [
+        {
+          "id": "2026-08-16-msvygawz-0-483032",
+          "src": "photos/2026-08-16/2026-08-16-msvygawz-0-483032.webp",
+          "uploadedAt": "2026-08-16T15:23:54.563Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-08-16-msvygc6i-1-b79fb7",
+          "src": "photos/2026-08-16/2026-08-16-msvygc6i-1-b79fb7.webp",
+          "uploadedAt": "2026-08-16T15:23:56.202Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-16-msvygcws-2-e01fe6",
+          "src": "photos/2026-08-16/2026-08-16-msvygcws-2-e01fe6.webp",
+          "uploadedAt": "2026-08-16T15:23:57.148Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-08-15",
       "topic": "산책",
