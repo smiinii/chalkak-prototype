@@ -1,6 +1,33 @@
 {
-  "updatedAt": "2026-08-16T15:25:07.577Z",
+  "updatedAt": "2026-08-17T04:30:39.918Z",
   "days": [
+    {
+      "date": "2026-08-17",
+      "topic": "다리",
+      "photos": [
+        {
+          "id": "2026-08-17-mswqk0j2-0-322aae",
+          "src": "photos/2026-08-17/2026-08-17-mswqk0j2-0-322aae.webp",
+          "uploadedAt": "2026-08-17T04:30:36.974Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-08-17-mswqk1bb-1-57281e",
+          "src": "photos/2026-08-17/2026-08-17-mswqk1bb-1-57281e.webp",
+          "uploadedAt": "2026-08-17T04:30:37.991Z",
+          "width": 1786,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-17-mswqk2su-2-f1c8cd",
+          "src": "photos/2026-08-17/2026-08-17-mswqk2su-2-f1c8cd.webp",
+          "uploadedAt": "2026-08-17T04:30:39.918Z",
+          "width": 1920,
+          "height": 1440
+        }
+      ]
+    },
     {
       "date": "2026-08-16",
       "topic": "창문",
