@@ -1,6 +1,61 @@
 {
-  "updatedAt": "2026-08-18T06:25:59.899Z",
+  "updatedAt": "2026-08-19T01:46:14.124Z",
   "days": [
+    {
+      "date": "2026-08-19",
+      "topic": "건물",
+      "photos": [
+        {
+          "id": "2026-08-19-mszfjxd2-0-019774",
+          "src": "photos/2026-08-19/2026-08-19-mszfjxd2-0-019774.webp",
+          "uploadedAt": "2026-08-19T01:45:55.622Z",
+          "width": 1920,
+          "height": 1350
+        },
+        {
+          "id": "2026-08-19-mszfjyoq-1-6e3c92",
+          "src": "photos/2026-08-19/2026-08-19-mszfjyoq-1-6e3c92.webp",
+          "uploadedAt": "2026-08-19T01:45:57.338Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-19-mszfk3z7-2-894515",
+          "src": "photos/2026-08-19/2026-08-19-mszfk3z7-2-894515.webp",
+          "uploadedAt": "2026-08-19T01:46:04.195Z",
+          "width": 1280,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-19-mszfk65v-3-4fde92",
+          "src": "photos/2026-08-19/2026-08-19-mszfk65v-3-4fde92.webp",
+          "uploadedAt": "2026-08-19T01:46:07.027Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-19-mszfk8bt-4-4e2c10",
+          "src": "photos/2026-08-19/2026-08-19-mszfk8bt-4-4e2c10.webp",
+          "uploadedAt": "2026-08-19T01:46:09.833Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-19-mszfk9s3-5-a403d8",
+          "src": "photos/2026-08-19/2026-08-19-mszfk9s3-5-a403d8.webp",
+          "uploadedAt": "2026-08-19T01:46:11.715Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-19-mszfkbn0-6-ad1f6b",
+          "src": "photos/2026-08-19/2026-08-19-mszfkbn0-6-ad1f6b.webp",
+          "uploadedAt": "2026-08-19T01:46:14.124Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-08-18",
       "topic": "출근",
