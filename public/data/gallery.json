@@ -1,6 +1,40 @@
 {
-  "updatedAt": "2026-08-20T07:40:01.661Z",
+  "updatedAt": "2026-08-21T05:03:34.220Z",
   "days": [
+    {
+      "date": "2026-08-21",
+      "topic": "비",
+      "photos": [
+        {
+          "id": "2026-08-21-mt2hhprw-0-83e39f",
+          "src": "photos/2026-08-21/2026-08-21-mt2hhprw-0-83e39f.webp",
+          "uploadedAt": "2026-08-21T05:03:30.236Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-21-mt2hhq8k-1-1d0567",
+          "src": "photos/2026-08-21/2026-08-21-mt2hhq8k-1-1d0567.webp",
+          "uploadedAt": "2026-08-21T05:03:30.836Z",
+          "width": 1050,
+          "height": 1400
+        },
+        {
+          "id": "2026-08-21-mt2hhrh6-2-fa018e",
+          "src": "photos/2026-08-21/2026-08-21-mt2hhrh6-2-fa018e.webp",
+          "uploadedAt": "2026-08-21T05:03:32.442Z",
+          "width": 1081,
+          "height": 1440
+        },
+        {
+          "id": "2026-08-21-mt2hhsuk-3-f0ef39",
+          "src": "photos/2026-08-21/2026-08-21-mt2hhsuk-3-f0ef39.webp",
+          "uploadedAt": "2026-08-21T05:03:34.220Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-08-20",
       "topic": "동그라미",
