@@ -1,6 +1,61 @@
 {
-  "updatedAt": "2026-08-23T06:08:41.069Z",
+  "updatedAt": "2026-08-23T06:10:30.854Z",
   "days": [
+    {
+      "date": "2026-08-23",
+      "topic": "휴식",
+      "photos": [
+        {
+          "id": "2026-08-23-mt5erctk-0-d95abe",
+          "src": "photos/2026-08-23/2026-08-23-mt5erctk-0-d95abe.webp",
+          "uploadedAt": "2026-08-23T06:10:19.688Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-23-mt5ereh8-1-129703",
+          "src": "photos/2026-08-23/2026-08-23-mt5ereh8-1-129703.webp",
+          "uploadedAt": "2026-08-23T06:10:21.836Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-23-mt5ergdi-2-b76aae",
+          "src": "photos/2026-08-23/2026-08-23-mt5ergdi-2-b76aae.webp",
+          "uploadedAt": "2026-08-23T06:10:24.294Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-23-mt5erhlq-3-5f3c26",
+          "src": "photos/2026-08-23/2026-08-23-mt5erhlq-3-5f3c26.webp",
+          "uploadedAt": "2026-08-23T06:10:25.886Z",
+          "width": 1920,
+          "height": 1280
+        },
+        {
+          "id": "2026-08-23-mt5eriz6-4-4d42a1",
+          "src": "photos/2026-08-23/2026-08-23-mt5eriz6-4-4d42a1.webp",
+          "uploadedAt": "2026-08-23T06:10:27.666Z",
+          "width": 1280,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-23-mt5erkek-5-d9b0f9",
+          "src": "photos/2026-08-23/2026-08-23-mt5erkek-5-d9b0f9.webp",
+          "uploadedAt": "2026-08-23T06:10:29.516Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-23-mt5erlfp-6-2b98b0",
+          "src": "photos/2026-08-23/2026-08-23-mt5erlfp-6-2b98b0.webp",
+          "uploadedAt": "2026-08-23T06:10:30.853Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-08-22",
       "topic": "꿈",
