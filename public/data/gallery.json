@@ -1,6 +1,68 @@
 {
-  "updatedAt": "2026-08-24T08:28:39.666Z",
+  "updatedAt": "2026-08-24T08:29:52.056Z",
   "days": [
+    {
+      "date": "2026-08-24",
+      "topic": "가로등",
+      "photos": [
+        {
+          "id": "2026-08-24-mt6z6gd6-0-98dc5c",
+          "src": "photos/2026-08-24/2026-08-24-mt6z6gd6-0-98dc5c.webp",
+          "uploadedAt": "2026-08-24T08:29:42.618Z",
+          "width": 1050,
+          "height": 1400
+        },
+        {
+          "id": "2026-08-24-mt6z6h8e-1-7fa444",
+          "src": "photos/2026-08-24/2026-08-24-mt6z6h8e-1-7fa444.webp",
+          "uploadedAt": "2026-08-24T08:29:43.742Z",
+          "width": 1496,
+          "height": 1496
+        },
+        {
+          "id": "2026-08-24-mt6z6ief-2-1ea498",
+          "src": "photos/2026-08-24/2026-08-24-mt6z6ief-2-1ea498.webp",
+          "uploadedAt": "2026-08-24T08:29:45.255Z",
+          "width": 1920,
+          "height": 1273
+        },
+        {
+          "id": "2026-08-24-mt6z6j6o-3-9b1981",
+          "src": "photos/2026-08-24/2026-08-24-mt6z6j6o-3-9b1981.webp",
+          "uploadedAt": "2026-08-24T08:29:46.272Z",
+          "width": 1920,
+          "height": 887
+        },
+        {
+          "id": "2026-08-24-mt6z6kkd-4-5dfd28",
+          "src": "photos/2026-08-24/2026-08-24-mt6z6kkd-4-5dfd28.webp",
+          "uploadedAt": "2026-08-24T08:29:48.061Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-24-mt6z6lbb-5-7372f9",
+          "src": "photos/2026-08-24/2026-08-24-mt6z6lbb-5-7372f9.webp",
+          "uploadedAt": "2026-08-24T08:29:49.031Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-24-mt6z6mi2-6-d71ab6",
+          "src": "photos/2026-08-24/2026-08-24-mt6z6mi2-6-d71ab6.webp",
+          "uploadedAt": "2026-08-24T08:29:50.570Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-24-mt6z6nnc-7-278394",
+          "src": "photos/2026-08-24/2026-08-24-mt6z6nnc-7-278394.webp",
+          "uploadedAt": "2026-08-24T08:29:52.056Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-08-23",
       "topic": "휴식",
