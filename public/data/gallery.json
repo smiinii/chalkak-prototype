@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T06:17:12.646Z",
+  "updatedAt": "2026-08-26T08:11:17.908Z",
   "days": [
     {
       "date": "2026-08-26",
@@ -53,6 +53,34 @@
           "uploadedAt": "2026-08-26T06:17:12.646Z",
           "width": 1920,
           "height": 1282
+        },
+        {
+          "id": "2026-08-26-mt9tecsq-0-ee4625",
+          "src": "photos/2026-08-26/2026-08-26-mt9tecsq-0-ee4625.webp",
+          "uploadedAt": "2026-08-26T08:11:12.074Z",
+          "width": 1050,
+          "height": 1401
+        },
+        {
+          "id": "2026-08-26-mt9teeaw-1-cfdd40",
+          "src": "photos/2026-08-26/2026-08-26-mt9teeaw-1-cfdd40.webp",
+          "uploadedAt": "2026-08-26T08:11:14.024Z",
+          "width": 1920,
+          "height": 1848
+        },
+        {
+          "id": "2026-08-26-mt9tefn4-2-ae6321",
+          "src": "photos/2026-08-26/2026-08-26-mt9tefn4-2-ae6321.webp",
+          "uploadedAt": "2026-08-26T08:11:15.760Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-26-mt9tehas-3-e3498d",
+          "src": "photos/2026-08-26/2026-08-26-mt9tehas-3-e3498d.webp",
+          "uploadedAt": "2026-08-26T08:11:17.908Z",
+          "width": 1440,
+          "height": 1920
         }
       ]
     },
