@@ -1,6 +1,68 @@
 {
-  "updatedAt": "2026-08-26T08:11:17.908Z",
+  "updatedAt": "2026-08-27T06:24:35.615Z",
   "days": [
+    {
+      "date": "2026-08-27",
+      "topic": "빨강",
+      "photos": [
+        {
+          "id": "2026-08-27-mtb50vlh-0-9ca985",
+          "src": "photos/2026-08-27/2026-08-27-mtb50vlh-0-9ca985.webp",
+          "uploadedAt": "2026-08-27T06:24:24.821Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-27-mtb50x9c-1-5960ff",
+          "src": "photos/2026-08-27/2026-08-27-mtb50x9c-1-5960ff.webp",
+          "uploadedAt": "2026-08-27T06:24:26.976Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-27-mtb50xzy-2-87a089",
+          "src": "photos/2026-08-27/2026-08-27-mtb50xzy-2-87a089.webp",
+          "uploadedAt": "2026-08-27T06:24:27.934Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-08-27-mtb50zbl-3-77c6e2",
+          "src": "photos/2026-08-27/2026-08-27-mtb50zbl-3-77c6e2.webp",
+          "uploadedAt": "2026-08-27T06:24:29.649Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-27-mtb50zvo-4-20910a",
+          "src": "photos/2026-08-27/2026-08-27-mtb50zvo-4-20910a.webp",
+          "uploadedAt": "2026-08-27T06:24:30.372Z",
+          "width": 1920,
+          "height": 1108
+        },
+        {
+          "id": "2026-08-27-mtb5115p-5-d291fb",
+          "src": "photos/2026-08-27/2026-08-27-mtb5115p-5-d291fb.webp",
+          "uploadedAt": "2026-08-27T06:24:32.029Z",
+          "width": 1920,
+          "height": 1629
+        },
+        {
+          "id": "2026-08-27-mtb512do-6-6ec824",
+          "src": "photos/2026-08-27/2026-08-27-mtb512do-6-6ec824.webp",
+          "uploadedAt": "2026-08-27T06:24:33.612Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-27-mtb513xa-7-d6fede",
+          "src": "photos/2026-08-27/2026-08-27-mtb513xa-7-d6fede.webp",
+          "uploadedAt": "2026-08-27T06:24:35.614Z",
+          "width": 1920,
+          "height": 1273
+        }
+      ]
+    },
     {
       "date": "2026-08-26",
       "topic": "들",
