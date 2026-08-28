@@ -1,6 +1,47 @@
 {
-  "updatedAt": "2026-08-27T11:35:12.599Z",
+  "updatedAt": "2026-08-28T00:54:22.462Z",
   "days": [
+    {
+      "date": "2026-08-28",
+      "topic": "강",
+      "photos": [
+        {
+          "id": "2026-08-28-mtc8o4ff-0-4a2609",
+          "src": "photos/2026-08-28/2026-08-28-mtc8o4ff-0-4a2609.webp",
+          "uploadedAt": "2026-08-28T00:54:14.379Z",
+          "width": 1920,
+          "height": 1280
+        },
+        {
+          "id": "2026-08-28-mtc8o6ss-1-90d30c",
+          "src": "photos/2026-08-28/2026-08-28-mtc8o6ss-1-90d30c.webp",
+          "uploadedAt": "2026-08-28T00:54:17.452Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-28-mtc8o853-2-ec5bfd",
+          "src": "photos/2026-08-28/2026-08-28-mtc8o853-2-ec5bfd.webp",
+          "uploadedAt": "2026-08-28T00:54:19.191Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-28-mtc8o9ib-3-e5fe15",
+          "src": "photos/2026-08-28/2026-08-28-mtc8o9ib-3-e5fe15.webp",
+          "uploadedAt": "2026-08-28T00:54:20.963Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-28-mtc8oany-4-168c4b",
+          "src": "photos/2026-08-28/2026-08-28-mtc8oany-4-168c4b.webp",
+          "uploadedAt": "2026-08-28T00:54:22.462Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-08-27",
       "topic": "빨강",
