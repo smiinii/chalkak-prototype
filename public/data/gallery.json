@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-28T00:54:22.462Z",
+  "updatedAt": "2026-08-28T01:45:51.651Z",
   "days": [
     {
       "date": "2026-08-28",
@@ -37,6 +37,20 @@
           "id": "2026-08-28-mtc8oany-4-168c4b",
           "src": "photos/2026-08-28/2026-08-28-mtc8oany-4-168c4b.webp",
           "uploadedAt": "2026-08-28T00:54:22.462Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-28-mtcaih5f-0-8efeae",
+          "src": "photos/2026-08-28/2026-08-28-mtcaih5f-0-8efeae.webp",
+          "uploadedAt": "2026-08-28T01:45:50.163Z",
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-28-mtcaiiar-1-e7fb62",
+          "src": "photos/2026-08-28/2026-08-28-mtcaiiar-1-e7fb62.webp",
+          "uploadedAt": "2026-08-28T01:45:51.651Z",
           "width": 1440,
           "height": 1920
         }
