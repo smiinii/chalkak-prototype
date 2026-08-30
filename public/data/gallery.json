@@ -1,6 +1,47 @@
 {
-  "updatedAt": "2026-08-29T07:38:21.072Z",
+  "updatedAt": "2026-08-30T15:04:54.290Z",
   "days": [
+    {
+      "date": "2026-08-30",
+      "topic": "산",
+      "photos": [
+        {
+          "id": "2026-08-30-mtfxxn53-0-c8d3fb",
+          "src": "photos/2026-08-30/2026-08-30-mtfxxn53-0-c8d3fb.webp",
+          "uploadedAt": "2026-08-30T15:04:47.463Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-08-30-mtfxxobc-1-b1ffa2",
+          "src": "photos/2026-08-30/2026-08-30-mtfxxobc-1-b1ffa2.webp",
+          "uploadedAt": "2026-08-30T15:04:48.984Z",
+          "width": 1920,
+          "height": 1280
+        },
+        {
+          "id": "2026-08-30-mtfxxpky-2-ec774f",
+          "src": "photos/2026-08-30/2026-08-30-mtfxxpky-2-ec774f.webp",
+          "uploadedAt": "2026-08-30T15:04:50.626Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-30-mtfxxr0g-3-e7223d",
+          "src": "photos/2026-08-30/2026-08-30-mtfxxr0g-3-e7223d.webp",
+          "uploadedAt": "2026-08-30T15:04:52.480Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-30-mtfxxsep-4-e87415",
+          "src": "photos/2026-08-30/2026-08-30-mtfxxsep-4-e87415.webp",
+          "uploadedAt": "2026-08-30T15:04:54.289Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-08-29",
       "topic": "하얀",
