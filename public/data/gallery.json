@@ -1,6 +1,47 @@
 {
-  "updatedAt": "2026-08-30T15:04:54.290Z",
+  "updatedAt": "2026-08-31T05:22:02.079Z",
   "days": [
+    {
+      "date": "2026-08-31",
+      "topic": "8월",
+      "photos": [
+        {
+          "id": "2026-08-31-mtgsjyfl-0-31784c",
+          "src": "photos/2026-08-31/2026-08-31-mtgsjyfl-0-31784c.webp",
+          "uploadedAt": "2026-08-31T05:21:57.009Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-31-mtgsjzoc-1-e1a754",
+          "src": "photos/2026-08-31/2026-08-31-mtgsjzoc-1-e1a754.webp",
+          "uploadedAt": "2026-08-31T05:21:58.620Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-31-mtgsk0p9-2-0cd417",
+          "src": "photos/2026-08-31/2026-08-31-mtgsk0p9-2-0cd417.webp",
+          "uploadedAt": "2026-08-31T05:21:59.949Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-08-31-mtgsk1fs-3-0f3dcb",
+          "src": "photos/2026-08-31/2026-08-31-mtgsk1fs-3-0f3dcb.webp",
+          "uploadedAt": "2026-08-31T05:22:00.904Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-08-31-mtgsk2cf-4-83417d",
+          "src": "photos/2026-08-31/2026-08-31-mtgsk2cf-4-83417d.webp",
+          "uploadedAt": "2026-08-31T05:22:02.079Z",
+          "width": 1920,
+          "height": 1280
+        }
+      ]
+    },
     {
       "date": "2026-08-30",
       "topic": "산",
