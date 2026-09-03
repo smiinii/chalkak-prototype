@@ -1,6 +1,124 @@
 {
-  "updatedAt": "2026-09-03T12:47:16.313Z",
+  "updatedAt": "2026-09-03T12:49:54.351Z",
   "days": [
+    {
+      "date": "2026-09-03",
+      "topic": "파랑",
+      "photos": [
+        {
+          "id": "2026-09-03-mtliuyw5-0-e531c5",
+          "src": "photos/2026-09-03/2026-09-03-mtliuyw5-0-e531c5.webp",
+          "uploadedAt": "2026-09-03T12:49:25.541Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtliv05k-1-ee2784",
+          "src": "photos/2026-09-03/2026-09-03-mtliv05k-1-ee2784.webp",
+          "uploadedAt": "2026-09-03T12:49:27.176Z",
+          "width": 1920,
+          "height": 864
+        },
+        {
+          "id": "2026-09-03-mtliv1hy-2-1b7f7c",
+          "src": "photos/2026-09-03/2026-09-03-mtliv1hy-2-1b7f7c.webp",
+          "uploadedAt": "2026-09-03T12:49:28.918Z",
+          "width": 1920,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtliv2wf-3-e9af47",
+          "src": "photos/2026-09-03/2026-09-03-mtliv2wf-3-e9af47.webp",
+          "uploadedAt": "2026-09-03T12:49:30.735Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtliv3yn-4-01082b",
+          "src": "photos/2026-09-03/2026-09-03-mtliv3yn-4-01082b.webp",
+          "uploadedAt": "2026-09-03T12:49:32.111Z",
+          "width": 1092,
+          "height": 1457
+        },
+        {
+          "id": "2026-09-03-mtliv5cm-5-222bca",
+          "src": "photos/2026-09-03/2026-09-03-mtliv5cm-5-222bca.webp",
+          "uploadedAt": "2026-09-03T12:49:33.910Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtliv6vd-6-724ac9",
+          "src": "photos/2026-09-03/2026-09-03-mtliv6vd-6-724ac9.webp",
+          "uploadedAt": "2026-09-03T12:49:35.881Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-09-03-mtliv8zy-7-61bcb4",
+          "src": "photos/2026-09-03/2026-09-03-mtliv8zy-7-61bcb4.webp",
+          "uploadedAt": "2026-09-03T12:49:38.638Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtliva6b-8-581568",
+          "src": "photos/2026-09-03/2026-09-03-mtliva6b-8-581568.webp",
+          "uploadedAt": "2026-09-03T12:49:40.163Z",
+          "width": 1410,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtlivb6u-9-3a3de2",
+          "src": "photos/2026-09-03/2026-09-03-mtlivb6u-9-3a3de2.webp",
+          "uploadedAt": "2026-09-03T12:49:41.478Z",
+          "width": 1081,
+          "height": 1440
+        },
+        {
+          "id": "2026-09-03-mtlivcme-10-903323",
+          "src": "photos/2026-09-03/2026-09-03-mtlivcme-10-903323.webp",
+          "uploadedAt": "2026-09-03T12:49:43.334Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtlivdzy-11-b56872",
+          "src": "photos/2026-09-03/2026-09-03-mtlivdzy-11-b56872.webp",
+          "uploadedAt": "2026-09-03T12:49:45.118Z",
+          "width": 1081,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtlivfn3-12-1a040e",
+          "src": "photos/2026-09-03/2026-09-03-mtlivfn3-12-1a040e.webp",
+          "uploadedAt": "2026-09-03T12:49:47.247Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtlivhdn-13-dfa8db",
+          "src": "photos/2026-09-03/2026-09-03-mtlivhdn-13-dfa8db.webp",
+          "uploadedAt": "2026-09-03T12:49:49.499Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtlivjdd-14-95c095",
+          "src": "photos/2026-09-03/2026-09-03-mtlivjdd-14-95c095.webp",
+          "uploadedAt": "2026-09-03T12:49:52.081Z",
+          "width": 1920,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-03-mtlivl4f-15-ba4c8a",
+          "src": "photos/2026-09-03/2026-09-03-mtlivl4f-15-ba4c8a.webp",
+          "uploadedAt": "2026-09-03T12:49:54.351Z",
+          "width": 1530,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-09-02",
       "topic": "행복",
