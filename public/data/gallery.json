@@ -1,6 +1,68 @@
 {
-  "updatedAt": "2026-09-03T12:49:54.351Z",
+  "updatedAt": "2026-09-04T05:06:24.772Z",
   "days": [
+    {
+      "date": "2026-09-04",
+      "topic": "밤",
+      "photos": [
+        {
+          "id": "2026-09-04-mtmhr78f-0-eeef8e",
+          "src": "photos/2026-09-04/2026-09-04-mtmhr78f-0-eeef8e.webp",
+          "uploadedAt": "2026-09-04T05:06:16.287Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-09-04-mtmhr8ck-1-6c0c59",
+          "src": "photos/2026-09-04/2026-09-04-mtmhr8ck-1-6c0c59.webp",
+          "uploadedAt": "2026-09-04T05:06:17.732Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-04-mtmhr9jx-2-eec76c",
+          "src": "photos/2026-09-04/2026-09-04-mtmhr9jx-2-eec76c.webp",
+          "uploadedAt": "2026-09-04T05:06:19.293Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-04-mtmhrain-3-e556d0",
+          "src": "photos/2026-09-04/2026-09-04-mtmhrain-3-e556d0.webp",
+          "uploadedAt": "2026-09-04T05:06:20.543Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-04-mtmhrb5g-4-3ac57b",
+          "src": "photos/2026-09-04/2026-09-04-mtmhrb5g-4-3ac57b.webp",
+          "uploadedAt": "2026-09-04T05:06:21.364Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-04-mtmhrc53-5-705be5",
+          "src": "photos/2026-09-04/2026-09-04-mtmhrc53-5-705be5.webp",
+          "uploadedAt": "2026-09-04T05:06:22.647Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-04-mtmhrd2x-6-ef2470",
+          "src": "photos/2026-09-04/2026-09-04-mtmhrd2x-6-ef2470.webp",
+          "uploadedAt": "2026-09-04T05:06:23.865Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-09-04-mtmhrds4-7-83d25f",
+          "src": "photos/2026-09-04/2026-09-04-mtmhrds4-7-83d25f.webp",
+          "uploadedAt": "2026-09-04T05:06:24.772Z",
+          "width": 768,
+          "height": 1024
+        }
+      ]
+    },
     {
       "date": "2026-09-03",
       "topic": "파랑",
