@@ -1,6 +1,75 @@
 {
-  "updatedAt": "2026-09-05T13:59:30.680Z",
+  "updatedAt": "2026-09-07T03:51:25.742Z",
   "days": [
+    {
+      "date": "2026-09-06",
+      "topic": "밤",
+      "photos": [
+        {
+          "id": "2026-09-06-mtqpe904-0-98c3a9",
+          "src": "photos/2026-09-06/2026-09-06-mtqpe904-0-98c3a9.webp",
+          "uploadedAt": "2026-09-07T03:51:13.684Z",
+          "width": 768,
+          "height": 1024
+        },
+        {
+          "id": "2026-09-06-mtqpe9su-1-2d864d",
+          "src": "photos/2026-09-06/2026-09-06-mtqpe9su-1-2d864d.webp",
+          "uploadedAt": "2026-09-07T03:51:14.718Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-06-mtqpeax6-2-f447fa",
+          "src": "photos/2026-09-06/2026-09-06-mtqpeax6-2-f447fa.webp",
+          "uploadedAt": "2026-09-07T03:51:16.170Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-06-mtqpec9o-3-94afdc",
+          "src": "photos/2026-09-06/2026-09-06-mtqpec9o-3-94afdc.webp",
+          "uploadedAt": "2026-09-07T03:51:17.916Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-06-mtqpedje-4-10fe29",
+          "src": "photos/2026-09-06/2026-09-06-mtqpedje-4-10fe29.webp",
+          "uploadedAt": "2026-09-07T03:51:19.562Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-09-06-mtqpeeol-5-001e4b",
+          "src": "photos/2026-09-06/2026-09-06-mtqpeeol-5-001e4b.webp",
+          "uploadedAt": "2026-09-07T03:51:21.045Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-06-mtqpegc4-6-6ad3d7",
+          "src": "photos/2026-09-06/2026-09-06-mtqpegc4-6-6ad3d7.webp",
+          "uploadedAt": "2026-09-07T03:51:23.188Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-06-mtqpehom-7-7e5c24",
+          "src": "photos/2026-09-06/2026-09-06-mtqpehom-7-7e5c24.webp",
+          "uploadedAt": "2026-09-07T03:51:24.934Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-09-06-mtqpeib1-8-45d230",
+          "src": "photos/2026-09-06/2026-09-06-mtqpeib1-8-45d230.webp",
+          "uploadedAt": "2026-09-07T03:51:25.741Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-09-05",
       "topic": "돌",
