@@ -1,6 +1,54 @@
 {
-  "updatedAt": "2026-09-11T04:23:04.153Z",
+  "updatedAt": "2026-09-11T04:25:34.659Z",
   "days": [
+    {
+      "date": "2026-09-09",
+      "topic": "도시",
+      "photos": [
+        {
+          "id": "2026-09-09-mtwgdojz-0-dc7fca",
+          "src": "photos/2026-09-09/2026-09-09-mtwgdojz-0-dc7fca.webp",
+          "uploadedAt": "2026-09-11T04:25:27.695Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-09-09-mtwgdpnk-1-e751be",
+          "src": "photos/2026-09-09/2026-09-09-mtwgdpnk-1-e751be.webp",
+          "uploadedAt": "2026-09-11T04:25:29.120Z",
+          "width": 1440,
+          "height": 1121
+        },
+        {
+          "id": "2026-09-09-mtwgdqos-2-195009",
+          "src": "photos/2026-09-09/2026-09-09-mtwgdqos-2-195009.webp",
+          "uploadedAt": "2026-09-11T04:25:30.460Z",
+          "width": 1920,
+          "height": 1118
+        },
+        {
+          "id": "2026-09-09-mtwgdro7-3-bbccf3",
+          "src": "photos/2026-09-09/2026-09-09-mtwgdro7-3-bbccf3.webp",
+          "uploadedAt": "2026-09-11T04:25:31.735Z",
+          "width": 1920,
+          "height": 1440
+        },
+        {
+          "id": "2026-09-09-mtwgdsy6-4-57f106",
+          "src": "photos/2026-09-09/2026-09-09-mtwgdsy6-4-57f106.webp",
+          "uploadedAt": "2026-09-11T04:25:33.390Z",
+          "width": 1873,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-09-mtwgdtxf-5-c60237",
+          "src": "photos/2026-09-09/2026-09-09-mtwgdtxf-5-c60237.webp",
+          "uploadedAt": "2026-09-11T04:25:34.659Z",
+          "width": 1081,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-09-07",
       "topic": "인물",
