@@ -1,6 +1,33 @@
 {
-  "updatedAt": "2026-09-07T03:51:25.742Z",
+  "updatedAt": "2026-09-11T04:23:04.153Z",
   "days": [
+    {
+      "date": "2026-09-07",
+      "topic": "인물",
+      "photos": [
+        {
+          "id": "2026-09-07-mtwgajfs-0-befa60",
+          "src": "photos/2026-09-07/2026-09-07-mtwgajfs-0-befa60.webp",
+          "uploadedAt": "2026-09-11T04:23:01.096Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-07-mtwgakmh-1-73b01c",
+          "src": "photos/2026-09-07/2026-09-07-mtwgakmh-1-73b01c.webp",
+          "uploadedAt": "2026-09-11T04:23:02.634Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-07-mtwgalsp-2-fb4663",
+          "src": "photos/2026-09-07/2026-09-07-mtwgalsp-2-fb4663.webp",
+          "uploadedAt": "2026-09-11T04:23:04.153Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-09-06",
       "topic": "밤",
