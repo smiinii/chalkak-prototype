@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-09-11T04:25:34.659Z",
+  "updatedAt": "2026-09-11T04:26:46.440Z",
   "days": [
+    {
+      "date": "2026-09-10",
+      "topic": "책",
+      "photos": [
+        {
+          "id": "2026-09-10-mtwgfbwd-0-85ccd5",
+          "src": "photos/2026-09-10/2026-09-10-mtwgfbwd-0-85ccd5.webp",
+          "uploadedAt": "2026-09-11T04:26:44.605Z",
+          "width": 1440,
+          "height": 1920
+        },
+        {
+          "id": "2026-09-10-mtwgfdbc-1-08f430",
+          "src": "photos/2026-09-10/2026-09-10-mtwgfdbc-1-08f430.webp",
+          "uploadedAt": "2026-09-11T04:26:46.440Z",
+          "width": 1440,
+          "height": 1920
+        }
+      ]
+    },
     {
       "date": "2026-09-09",
       "topic": "도시",
